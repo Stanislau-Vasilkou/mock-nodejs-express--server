@@ -18,8 +18,8 @@ app.use(cors());
 
 app.get('/specialist', controller.getAll);
 app.post('/specialist', controller.getAll);
-app.get('/specialist/category:id', controller.getSpecialistsByCategory);
-app.get('/category', controller.getCategories);
+app.get('/specialist/category', controller.getSpecialistsByCategory);
+app.get('/categories', controller.getCategories);
 app.post('/login', controller.login);
 app.post('/verify', controller.verify);
 

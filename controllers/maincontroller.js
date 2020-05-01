@@ -1,15 +1,16 @@
 const fs = require('fs');
-const maincontroller = JSON.parse(fs.readFileSync('./assets/specialists.json'), 'utf-8');
+const specialists = JSON.parse(fs.readFileSync('./assets/specialists.json'), 'utf-8');
 const categories = JSON.parse(fs.readFileSync('./assets/categories.json'), 'utf-8');
 const clients = JSON.parse(fs.readFileSync('./assets/clients.json'), 'utf-8');
 
 exports.getAll = (req, res) => {
-    res.send(maincontroller);
+    res.send(specialists);
 };
 
 exports.getSpecialistsByCategory = (req, res) => {
-    const categoryId = req.params.categoryId;
-    const filteredSpecialists = maincontroller.filter((spec) => spec.categories.includes(categoryId));
+    const categoryId = req.query.categoryId;
+    console.log(categoryId);
+    const filteredSpecialists = specialists.filter((spec) => spec.category.includes(categoryId));
     res.send(filteredSpecialists);
 };
 
@@ -24,6 +25,7 @@ exports.login = (req, res) => {
 exports.verify = (req, res) => {
     const clientId = req.body.id;
     const clientPass = req.body.pass;
+    console.log(body);
     const isExist = clients.some((client) => client.id === clientId && client.password === clientPass);
     isExist ? res.send('Is logged in') : res.sendStatus(404);
 }
