@@ -1,0 +1,20 @@
+[
+  {
+    "id": "+375292000010",
+    "name": "Ivan",
+    "password": "qwertyiop",
+    "bookedTime": ""
+  },
+  {
+    "id": "+375292130010",
+    "name": "Petr",
+    "password": "qwertyiop",
+    "bookedTime": ""
+  },
+  {
+    "id": "+375292120010",
+    "name": "Anna",
+    "password": "qwertyiop",
+    "bookedTime": ""
+  }
+]
